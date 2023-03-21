@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
               SizedBox(
                 height: 20,
               ),
-              Image.asset('assets/images/educator.png'),
+              Image.asset('assets/images/Education-removebg-preview.png'),
               SizedBox(
                 height: 50,
               ),
