@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: (MediaQuery.of(context).size.height * 4),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xFF2E1A68),
+                  color: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ),
