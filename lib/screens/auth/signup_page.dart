@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: (MediaQuery.of(context).size.height * 4),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 15, 5, 46),
+                  color: Color.fromARGB(255, 162, 147, 205),
                 ),
               ),
             ),
@@ -67,6 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color.fromRGBO(9, 3, 26, 1),
+                 Image.asset('assets/images/ab.png')
                 ),
                 child: const Text(
                   'Logo',
