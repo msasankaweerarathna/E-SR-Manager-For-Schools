@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3)).then((value) {
+    Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.push(
         context,
         MaterialPageRoute<void>(
@@ -32,10 +32,11 @@ class _SplashScreenState extends State<SplashScreen> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         alignment: Alignment.center,
+        // ignore: prefer_const_constructors
         decoration: BoxDecoration(
           gradient: kGradientCommon,
         ),
-        child: Text('LOGO'),
+        child: const Text('LOGO'),
       ),
     );
   }
