@@ -40,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                 width: MediaQuery.of(context).size.width / 4,
                 height: MediaQuery.of(context).size.width / 4,
+                // ignore: prefer_const_constructors
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: kGradientCommon,
@@ -52,9 +53,10 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                 width: (MediaQuery.of(context).size.height * 4),
                 height: (MediaQuery.of(context).size.height * 4),
+                // ignore: prefer_const_constructors
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 0, 0, 0),
+                  color: const Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ),
@@ -65,13 +67,15 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width / 3,
                 height: MediaQuery.of(context).size.width / 3,
                 alignment: Alignment.center,
+                // ignore: prefer_const_constructors
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xFF2E1A68),
                 ),
+                // ignore: prefer_const_constructors
                 child: Text(
                   'Logo',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             ),
@@ -84,14 +88,17 @@ class _LoginPageState extends State<LoginPage> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
+                      // ignore: prefer_const_constructors
                       Text(
                         'Login',
+                        // ignore: prefer_const_constructors
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 50,
                           color: Colors.white,
                         ),
                       ),
+                      // ignore: prefer_const_constructors
                       SizedBox(
                         height: 20,
                       ),
