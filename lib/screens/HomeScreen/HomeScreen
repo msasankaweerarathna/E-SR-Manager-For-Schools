@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:student_app/screens/dashboard/pages/student_attendance.dart';
+import 'package:student_app/screens/dashboard/pages/student_information.dart';
+import 'package:student_app/screens/dashboard/pages/student_progress.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My App'),
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Image.asset('assets/images/logo.png'),
+        ),
+      ),
+      body: Container(
+        child: Center(
+          child: Text(
+            'Welcome to my app!',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+      ),
+    );
+  }
+}
