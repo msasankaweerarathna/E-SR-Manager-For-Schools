@@ -67,11 +67,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color.fromRGBO(9, 3, 26, 1),
-                 Image.asset('assets/images/ab.png')
                 ),
-                child: const Text(
-                  'Logo',
-                  style: TextStyle(color: Colors.white),
+                child: Image.asset(
+                  'assets/images/ab.png',
+                  width: 100,
                 ),
               ),
             ),
