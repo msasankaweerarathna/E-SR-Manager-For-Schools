@@ -1,9 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:student_app/screens/dashboard/dashboard_home.dart';
-import 'package:student_app/utils/color_constants.dart';
-import 'package:student_app/utils/size_config.dart';
+import 'package:school_app/screens/dashboard/dashboard.dart';
+import 'package:school_app/utils/fade_animation.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,158 +14,165 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    var size = SizeConfig();
     return Scaffold(
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Stack(
-          children: [
-            Positioned(
-              left: size.getPropotionateWidth(30),
-              top: size.getPropotionateHeight(100),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 4,
-                height: MediaQuery.of(context).size.width / 4,
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 400,
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: kGradientCommon,
-                ),
-              ),
-            ),
-            Positioned(
-              right: size.getPropotionateWidth(30),
-              top: size.getPropotionateHeight(50),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 4,
-                height: MediaQuery.of(context).size.width / 4,
-                // ignore: prefer_const_constructors
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: kGradientCommon,
-                ),
-              ),
-            ),
-            Positioned(
-              // left: MediaQuery.of(context).size.width,
-              left: size.getPropotionateHeight(-600),
-              child: Container(
-                width: (MediaQuery.of(context).size.height * 4),
-                height: (MediaQuery.of(context).size.height * 4),
-                // ignore: prefer_const_constructors
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: const Color.fromARGB(255, 0, 0, 0),
-                ),
-              ),
-            ),
-            Positioned(
-              left: MediaQuery.of(context).size.width / 3,
-              top: size.getPropotionateHeight(100),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 3,
-                height: MediaQuery.of(context).size.width / 3,
-                alignment: Alignment.center,
-                // ignore: prefer_const_constructors
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xFF2E1A68),
-                ),
-                // ignore: prefer_const_constructors
-                child: Text(
-                  'Logo',
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            Positioned(
-              right: 30,
-              bottom: 0,
-              child: Container(
-                constraints: BoxConstraints(
-                    maxHeight: MediaQuery.of(context).size.height / 2),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      // ignore: prefer_const_constructors
-                      Text(
-                        'Login',
-                        // ignore: prefer_const_constructors
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 50,
-                          color: Colors.white,
-                        ),
-                      ),
-                      // ignore: prefer_const_constructors
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        padding: EdgeInsets.all(4),
-                        width: MediaQuery.of(context).size.width / 1.5,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Username',
-                            hintText: 'Username',
-                          ),
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        padding: EdgeInsets.all(4),
-                        width: MediaQuery.of(context).size.width / 1.5,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Password',
-                            hintText: 'Password',
-                          ),
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 1.5,
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<void>(
-                                builder: (BuildContext context) =>
-                                    const DashboardHomePage(),
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/background.png'),
+                        fit: BoxFit.fill)),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+                      left: 30,
+                      width: 80,
+                      height: 200,
+                      child: FadeAnimation(
+                          1,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/light-1.png'))),
+                          )),
+                    ),
+                    Positioned(
+                      left: 140,
+                      width: 80,
+                      height: 150,
+                      child: FadeAnimation(
+                          1.3,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/light-2.png'))),
+                          )),
+                    ),
+                    Positioned(
+                      right: 40,
+                      top: 40,
+                      width: 80,
+                      height: 150,
+                      child: FadeAnimation(
+                          1.5,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/clock.png'))),
+                          )),
+                    ),
+                    Positioned(
+                      child: FadeAnimation(
+                          1.6,
+                          Container(
+                            margin: EdgeInsets.only(top: 50),
+                            child: Center(
+                              child: Text(
+                                "Welcome",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.bold),
                               ),
-                            );
-                          },
-                          child: Text('Login'),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 160,
-                      ),
-                    ],
-                  ),
+                            ),
+                          )),
+                    )
+                  ],
                 ),
               ),
-            )
-          ],
+              Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Column(
+                  children: <Widget>[
+                    FadeAnimation(
+                        1.8,
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color.fromRGBO(143, 148, 251, .2),
+                                    blurRadius: 20.0,
+                                    offset: Offset(0, 10))
+                              ]),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: Colors.grey[100]!))),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Student ID",
+                                      hintStyle:
+                                          TextStyle(color: Colors.grey[400])),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Password",
+                                      hintStyle:
+                                          TextStyle(color: Colors.grey[400])),
+                                ),
+                              )
+                            ],
+                          ),
+                        )),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        log('dsada');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const DashboardPage(),
+                          ),
+                        );
+                      },
+                      child: FadeAnimation(
+                        2,
+                        Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(colors: [
+                                Color.fromRGBO(108, 113, 211, 1),
+                                Color.fromRGBO(87, 93, 206, 0.6),
+                              ])),
+                          child: Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
