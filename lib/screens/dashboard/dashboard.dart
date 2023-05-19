@@ -15,11 +15,14 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+  ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Container(
           child: Column(
             children: <Widget>[
@@ -93,11 +96,13 @@ class _DashboardPageState extends State<DashboardPage> {
                   ],
                 ),
               ),
-              Padding(
+              Container(
+                // height: MediaQuery.of(context).size.height * .7,
                 padding: EdgeInsets.all(30.0),
                 child: Column(
                   children: <Widget>[
                     GridView.count(
+                      controller: _scrollController,
                       shrinkWrap: true,
                       crossAxisCount: 2,
                       children: [
@@ -162,13 +167,28 @@ class _DashboardPageState extends State<DashboardPage> {
                           child: DashboardTile(
                             timing: 2.0,
                             assetPath: 'assets/images/attendance.png',
-                            cardTitle: 'Results',
+                            cardTitle: 'Exams/Results',
                           ),
                         ),
                         DashboardTile(
                           timing: 2.2,
                           assetPath: 'assets/images/attendance.png',
                           cardTitle: 'Reports',
+                        ),
+                        DashboardTile(
+                          timing: 2.2,
+                          assetPath: 'assets/images/attendance.png',
+                          cardTitle: 'Payments',
+                        ),
+                        DashboardTile(
+                          timing: 2.2,
+                          assetPath: 'assets/images/attendance.png',
+                          cardTitle: 'Activities',
+                        ),
+                        DashboardTile(
+                          timing: 2.2,
+                          assetPath: 'assets/images/attendance.png',
+                          cardTitle: 'Profile',
                         ),
                       ],
                     )
